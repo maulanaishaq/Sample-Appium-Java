@@ -34,7 +34,7 @@ public class AppiumController {
             case ANDROID:
                 File classpathRoot = new File(System.getProperty("user.dir"));
                 File appDir = new File(classpathRoot, "/app/Android");
-                File app = new File(appDir, "Calculator.apk");
+                File app = new File(appDir, "SauceLabs.apk");
                 cap.setCapability("deviceName", "Redmi Note 11");
                 cap.setCapability("udid", "3cc067d6");
                 cap.setCapability("platformName", "Android");
