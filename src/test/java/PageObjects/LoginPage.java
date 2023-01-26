@@ -1,5 +1,6 @@
 package PageObjects;
 
+
 public interface LoginPage {
 
 
@@ -12,6 +13,8 @@ public interface LoginPage {
     void assertName(String expectedName);
 
     boolean isDisplayed(Boolean expected);
+
+    void assertErrorMessage(String expectedErrorMessage);
 
 
 

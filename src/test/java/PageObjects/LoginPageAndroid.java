@@ -4,9 +4,8 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.junit.Assert;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class LoginPageAndroid implements LoginPage{
 
@@ -15,7 +14,6 @@ public class LoginPageAndroid implements LoginPage{
 
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
-
 
     @AndroidFindBy(accessibility = "test-Username")
     private MobileElement txtUserName;
@@ -49,7 +47,12 @@ public class LoginPageAndroid implements LoginPage{
 
     @Override
     public boolean isDisplayed(Boolean expected) {
-        Assert.assertEquals(expected, cartButton.isDisplayed());
+        Assert.assertEquals(expected.booleanValue(), cartButton.isDisplayed());
         return expected;
+    }
+
+    @Override
+    public void assertErrorMessage(String expectedErrorMessage) {
+
     }
 }

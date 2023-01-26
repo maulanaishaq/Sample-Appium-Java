@@ -1,6 +1,7 @@
 package Test;
 
-import org.junit.Test;
+
+import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTestClass{
 
@@ -14,9 +15,9 @@ public class LoginTest extends BaseTestClass{
         Thread.sleep(300);
         loginPage.assertName("ADD TO CART");
         loginPage.isDisplayed(true);
-
-
     }
+
+
 
 
 }

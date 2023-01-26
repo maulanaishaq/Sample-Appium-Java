@@ -4,28 +4,32 @@ import AppiumSuport.AppiumBaseClass;
 import AppiumSuport.AppiumController;
 import PageObjects.LoginPage;
 import PageObjects.LoginPageAndroid;
-import org.junit.After;
-import org.junit.Before;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
 
 public class BaseTestClass extends AppiumBaseClass {
 
     LoginPage loginPage;
 
-    @Before
+    @BeforeMethod
     public void setUp() throws Exception{
         AppiumController.instance.start();
         switch (AppiumController.executionOS){
-            case ANDROID:
+            case ANDROID_EMULATOR:
                 loginPage = new LoginPageAndroid(driver());
-                    break;
-            case IOS :
+                break;
+            case ANDROID_REAL_DEVICE:
+                loginPage = new LoginPageAndroid(driver());
+                break;
+            case IOS:
                 loginPage = new LoginPageAndroid(driver());
                 break;
 
         }
     }
 
-    @After
+    @AfterMethod
     public void tearDown(){
         AppiumController.instance.stop();
     }
