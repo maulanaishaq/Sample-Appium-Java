@@ -7,6 +7,8 @@ import PageObjects.LoginPageAndroid;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import static org.testng.Reporter.log;
+
 
 public class BaseTestClass extends AppiumBaseClass {
 
@@ -26,6 +28,15 @@ public class BaseTestClass extends AppiumBaseClass {
                 loginPage = new LoginPageAndroid(driver());
                 break;
 
+        }
+    }
+
+    public void waitFor(int numberOfSeconds) {
+        try {
+            log("Sleep for " + numberOfSeconds);
+            Thread.sleep(numberOfSeconds * 1000);
+        } catch(InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
