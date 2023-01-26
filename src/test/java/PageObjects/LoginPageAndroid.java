@@ -28,6 +28,9 @@ public class LoginPageAndroid implements LoginPage{
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"test-ADD TO CART\"])[1]/android.widget.TextView")
     private MobileElement cartButton;
 
+    @AndroidFindBy(xpath= "//android.view.ViewGroup[@content-desc=\"test-Error message\"]/android.widget.TextView")
+    private MobileElement txtErrorMessage;
+
     public void inputUsername(String username){
         txtUserName.sendKeys(username);
     }
@@ -42,17 +45,16 @@ public class LoginPageAndroid implements LoginPage{
 
     public void assertName(String expectedName) {
         Assert.assertEquals(expectedName, cartButton.getText());
-
     }
 
-    @Override
+
     public boolean isDisplayed(Boolean expected) {
         Assert.assertEquals(expected.booleanValue(), cartButton.isDisplayed());
         return expected;
     }
 
-    @Override
-    public void assertErrorMessage(String expectedErrorMessage) {
 
+    public void assertErrorMessage(String expectedErrorMessage) {
+        Assert.assertEquals(expectedErrorMessage, txtErrorMessage.getText());
     }
 }

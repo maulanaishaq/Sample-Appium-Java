@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTestClass extends AppiumBaseClass {
 
-    LoginPage loginPage;
+    LoginPageAndroid loginPage;
 
     @BeforeMethod
     public void setUp() throws Exception{

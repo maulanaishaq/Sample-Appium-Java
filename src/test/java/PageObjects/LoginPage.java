@@ -1,6 +1,8 @@
 package PageObjects;
 
 
+import io.appium.java_client.android.AndroidElement;
+
 public interface LoginPage {
 
 
@@ -10,11 +12,6 @@ public interface LoginPage {
 
     void clickLogin();
 
-    void assertName(String expectedName);
-
-    boolean isDisplayed(Boolean expected);
-
-    void assertErrorMessage(String expectedErrorMessage);
 
 
 
